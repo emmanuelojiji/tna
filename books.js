@@ -1,5 +1,5 @@
 window.onload = () => {
-    const scrollLeft = document.querySelector("#scroll-left");
+    const scrollLeft = document.getElementsByClassName("scroll-left");
     const main = document.querySelector("#books-films-wrap");
     const scrollRight = document.getElementsByClassName("scroll-right");
 
@@ -8,15 +8,18 @@ window.onload = () => {
     scrollRight[index].onclick = () => {
             main.style.transform = "translateX(-100%)"
             console.log("hey")
+
+           /* main.style.height = "100vh";*/
     }
 
 }
 
 
-
-    scrollLeft.onclick = () => {
+for (let index = 0; index < scrollLeft.length; index++) {
+    scrollLeft[index].onclick = () => {
         main.style.transform = "translateX(0%)"
+        main.style.height = "auto";
     }
-
+}
     
 }
